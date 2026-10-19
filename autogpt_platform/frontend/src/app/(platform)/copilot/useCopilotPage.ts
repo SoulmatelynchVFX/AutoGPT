@@ -26,7 +26,6 @@ import {
   type ExpertKickoffMetadata,
 } from "./expertKickoff";
 import { useExpertKickoff } from "./useExpertKickoff";
-import { useCopilotNotifications } from "./useCopilotNotifications";
 import { useCopilotRuntimeStream } from "./useCopilotRuntimeStream";
 import { useCopilotStream } from "./useCopilotStream";
 import { resolveExpertIdentity, useExpertMap } from "./useExpertMap";
@@ -359,8 +358,6 @@ export function useCopilotPage({
           drainedCount: stream.drainedCount,
         }),
   });
-
-  useCopilotNotifications(sessionId);
 
   const {
     onSend: sendNewMessage,
