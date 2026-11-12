@@ -33,6 +33,8 @@ env:
 
 jobs:
   benchmark-tests:
+    # Fork pull requests cannot access the API keys required by this job.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 30
     defaults:
